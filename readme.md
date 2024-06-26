@@ -17,7 +17,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 5. Installez les dépendances : `pip install -r requirements.txt`
 6. Appliquez les migrations : `python manage.py migrate`
 7. Démarrez le serveur de développement : `python manage.py runserver`
-8. Attentiona modifier le .env avec vos informations de base de données, pour ce projet PostgreSQL est utilisé :
+8. Attention a bien modifier le .env avec vos informations de base de données, pour ce projet PostgreSQL est utilisé :
    - DATABASE_NAME = "your_database_name"
    - DATABASE_USER = "your_database_user"
    - DATABASE_PASSWORD = "your_database_password"
