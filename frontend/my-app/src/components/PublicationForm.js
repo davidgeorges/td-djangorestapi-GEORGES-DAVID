@@ -20,7 +20,13 @@ const PublicationForm = () => {
     if (id) {
       getPublication(id)
         .then((response) => setFormData(response.data))
-        .catch((error) => handleSnackbarError('Failed to fetch publication.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to fetch publication.');
+          }
+        });
     }
   }, [id]);
 
@@ -39,13 +45,25 @@ const PublicationForm = () => {
         .then(() => {
           navigate('/publications');
         })
-        .catch((error) => handleSnackbarError('Failed to update publication.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to update publication.');
+          }
+        });
     } else {
       createPublication(formData)
         .then(() => {
           navigate('/publications');
         })
-        .catch((error) => handleSnackbarError('Failed to create publication.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to create publication.');
+          }
+        });
     }
   };
 

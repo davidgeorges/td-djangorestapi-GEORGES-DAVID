@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'http://localhost:8000/api/',
+  withCredentials: true
 });
 
 // Chercheurs
@@ -24,3 +25,15 @@ export const getPublication = (id) => api.get(`publications/${id}/`);
 export const createPublication = (data) => api.post('publications/', data);
 export const updatePublication = (id, data) => api.put(`publications/${id}/`, data);
 export const deletePublication = (id) => api.delete(`publications/${id}/`);
+
+
+export const getToken = async () => {
+  try {
+    const response = await api.get('/getToken/');
+    console.log('Token response:', response.data);
+    return response.data.access;
+  } catch (error) {
+    console.error('Failed to fetch token:', error);
+    throw error;
+  }
+};

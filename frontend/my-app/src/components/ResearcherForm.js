@@ -18,7 +18,13 @@ const ResearcherForm = () => {
     if (id) {
       getChercheur(id)
         .then((response) => setFormData(response.data))
-        .catch((error) => handleSnackbarError('Failed to fetch researcher.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to fetch researcher.');
+          }
+        });
     }
   }, [id]);
 
@@ -37,13 +43,25 @@ const ResearcherForm = () => {
         .then(() => {
           navigate('/chercheurs');
         })
-        .catch((error) => handleSnackbarError('Failed to update researcher.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to update researcher.');
+          }
+        });
     } else {
       createChercheur(formData)
         .then(() => {
           navigate('/chercheurs');
         })
-        .catch((error) => handleSnackbarError('Failed to create researcher.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to create researcher.');
+          }
+        });
     }
   };
 

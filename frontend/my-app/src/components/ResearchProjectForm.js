@@ -22,7 +22,13 @@ const ResearchProjectForm = () => {
     if (id) {
       getProjet(id)
         .then((response) => setFormData(response.data))
-        .catch((error) => handleSnackbarError('Failed to fetch project.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to fetch project.');
+          }
+        });
     }
   }, [id]);
 
@@ -41,13 +47,25 @@ const ResearchProjectForm = () => {
         .then(() => {
           navigate('/projets');
         })
-        .catch((error) => handleSnackbarError('Failed to update project.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to update project.');
+          }
+        });
     } else {
       createProjet(formData)
         .then(() => {
           navigate('/projets');
         })
-        .catch((error) => handleSnackbarError('Failed to create project.'));
+        .catch((error) => {
+          if (error.response && error.response.status === 401) {
+            handleSnackbarError('Unauthorized to perform this action.');
+          } else {
+            handleSnackbarError('Failed to create project.');
+          }
+        });
     }
   };
 
