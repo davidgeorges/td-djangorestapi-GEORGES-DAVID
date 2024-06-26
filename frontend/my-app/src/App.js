@@ -1,31 +1,34 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Chercheurs from './components/Chercheurs';
-import Projets from './components/Projets';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout';
+import ResearchProjectList from './components/ResearchProjectList';
+import ResearchProjectForm from './components/ResearchProjectForm';
+import PublicationList from './components/PublicationList';
+import PublicationForm from './components/PublicationForm';
+import ResearcherList from './components/ResearcherList';
+import ResearcherForm from './components/ResearcherForm';
+import AdvancedSearch from './components/AdvancedSearch';
 import './App.css';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="app">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/chercheurs">Chercheurs</Link>
-            </li>
-            <li>
-              <Link to="/projets">Projets</Link>
-            </li>
-          </ul>
-        </nav>
+      <Layout>
         <Routes>
-          <Route path="/chercheurs" element={<Chercheurs />} />
-          <Route path="/projets" element={<Projets />} />
+          <Route path="/projets" element={<ResearchProjectList />} />
+          <Route path="/projets/ajouter" element={<ResearchProjectForm />} />
+          <Route path="/projets/:id/modifier" element={<ResearchProjectForm />} />
+          <Route path="/publications" element={<PublicationList />} />
+          <Route path="/publications/ajouter" element={<PublicationForm />} />
+          <Route path="/publications/:id/modifier" element={<PublicationForm />} />
+          <Route path="/chercheurs" element={<ResearcherList />} />
+          <Route path="/chercheurs/ajouter" element={<ResearcherForm />} />
+          <Route path="/chercheurs/:id/modifier" element={<ResearcherForm />} />
+          <Route path="/recherche-avancee" element={<AdvancedSearch />} />
         </Routes>
-      </div>
+      </Layout>
     </Router>
   );
-};
+}
 
 export default App;
