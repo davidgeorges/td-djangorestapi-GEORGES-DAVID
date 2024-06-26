@@ -21,8 +21,9 @@ Cette application permet de gérer les informations sur les projets de recherche
 ### Frontend
 
 1. Accédez au répertoire `frontend` : `cd frontend`
-2. Installez les dépendances : `npm install`
-3. Démarrez l'application React : `npm start`
+2. Accédez au répertoire `myapp` : `cd myapp`
+3. Installez les dépendances : `npm install`
+4. Démarrez l'application React : `npm start`
 
 ## Utilisation
 
