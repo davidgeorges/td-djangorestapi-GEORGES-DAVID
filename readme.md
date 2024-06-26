@@ -75,5 +75,4 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ## Authentification
 
-- `POST /api/token/` : Obtient un token JWT pour l'authentification. (Envoyer les informations d'identification de l'utilisateur)
-- `POST /api/token/refresh/` : Rafraîchit le token JWT. (Envoyer le token de rafraîchissement)
+- `POST /api/getToken/` : Obtient un token JWT pour l'authentification. (Envoyer les informations d'identification de l'utilisateur)
