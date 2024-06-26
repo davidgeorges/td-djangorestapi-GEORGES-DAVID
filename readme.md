@@ -25,7 +25,10 @@ Cette application permet de gérer les informations sur les projets de recherche
 3. Installez les dépendances : `npm install`
 4. Démarrez l'application React : `npm start`
 
-## Utilisation
+## Utilisation - Documentation
+- SWAGGER:  http://localhost:8000/api/swagger/
+- REDOC : http://localhost:8000/api/redoc/
+
 
 # API Endpoints
 
