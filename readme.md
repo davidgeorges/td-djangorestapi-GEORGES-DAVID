@@ -8,7 +8,7 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ### Backend
 
-1. Clonez le dépôt : `git clone ?`
+1. Clonez le dépôt : `git clone https://github.com/davidgeorges/td-djangorestapi-GEORGES-DAVID.git`
 2. Accédez au répertoire du projet : `cd project`
 3. Créez un environnement virtuel : `python -m venv env`
 4. Activez l'environnement virtuel :
@@ -26,11 +26,44 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ## Utilisation
 
-### API Endpoints
+# API Endpoints
 
-- **Chercheurs**
-  - `GET /api/chercheurs/` : Liste des chercheurs
-  - `POST /api/chercheurs/` : Créer un nouveau chercheur
-  - `GET /api/chercheurs/:id/` : Détails d'un chercheur
-  - `PUT /api/chercheurs/:id/` : Mettre à jour un chercheur
-  - `DELETE /api/chercheurs
+## Chercheurs
+
+- `GET /api/chercheurs/` : Récupère la liste de tous les chercheurs.
+- `POST /api/chercheurs/` : Crée un nouveau chercheur.
+- `GET /api/chercheurs/:id/` : Récupère les détails d'un chercheur spécifique.
+  - Exemple : `/api/chercheurs/1/` pour récupérer le chercheur avec l'ID 1.
+- `PUT /api/chercheurs/:id/` : Met à jour un chercheur spécifique.
+  - Exemple : `/api/chercheurs/1/` pour mettre à jour le chercheur avec l'ID 1.
+- `DELETE /api/chercheurs/:id/` : Supprime un chercheur spécifique.
+  - Exemple : `/api/chercheurs/1/` pour supprimer le chercheur avec l'ID 1.
+
+## Projets de Recherche
+
+- `GET /api/projets/` : Récupère la liste de tous les projets de recherche.
+  - Paramètres optionnels : `?status=ongoing` pour filtrer les projets en cours.
+- `POST /api/projets/` : Crée un nouveau projet de recherche.
+- `GET /api/projets/:id/` : Récupère les détails d'un projet de recherche spécifique.
+  - Exemple : `/api/projets/1/` pour récupérer le projet de recherche avec l'ID 1.
+- `PUT /api/projets/:id/` : Met à jour un projet de recherche spécifique.
+  - Exemple : `/api/projets/1/` pour mettre à jour le projet de recherche avec l'ID 1.
+- `DELETE /api/projets/:id/` : Supprime un projet de recherche spécifique.
+  - Exemple : `/api/projets/1/` pour supprimer le projet de recherche avec l'ID 1.
+
+## Publications
+
+- `GET /api/publications/` : Récupère la liste de toutes les publications.
+  - Paramètres optionnels : `?year=2023` pour filtrer les publications par année.
+- `POST /api/publications/` : Crée une nouvelle publication.
+- `GET /api/publications/:id/` : Récupère les détails d'une publication spécifique.
+  - Exemple : `/api/publications/1/` pour récupérer la publication avec l'ID 1.
+- `PUT /api/publications/:id/` : Met à jour une publication spécifique.
+  - Exemple : `/api/publications/1/` pour mettre à jour la publication avec l'ID 1.
+- `DELETE /api/publications/:id/` : Supprime une publication spécifique.
+  - Exemple : `/api/publications/1/` pour supprimer la publication avec l'ID 1.
+
+## Authentification
+
+- `POST /api/token/` : Obtient un token JWT pour l'authentification. (Envoyer les informations d'identification de l'utilisateur)
+- `POST /api/token/refresh/` : Rafraîchit le token JWT. (Envoyer le token de rafraîchissement)
