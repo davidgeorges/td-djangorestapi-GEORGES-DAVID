@@ -8,11 +8,11 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ### Backend
 
-1. Clonez le dépôt : `git clone https://github.com/davidgeorges/td-djangorestapi-GEORGES-DAVID.git`
-2. Accédez au répertoire du projet : `cd project`
+1. Clonez le dépôt : `git clone https://github.com/davidgeorges/td-djangorestapi-GEORGES-DAVID.git`, puis l'ouvrir
+2. Accédez au répertoire du projet : `cd .\backend\project\`
 3. Créez un environnement virtuel : `python -m venv env`
 4. Activez l'environnement virtuel :
-   - Sur Windows : `env\Scripts\activate`
+   - Sur Windows : `env\Scripts\activate` ou `.\env\Scripts\activate.bat`
    - Sur MacOS/Linux : `source env/bin/activate`
 5. Installez les dépendances : `pip install -r requirements.txt`
 6. Appliquez les migrations : `python manage.py migrate`
@@ -26,9 +26,8 @@ Cette application permet de gérer les informations sur les projets de recherche
 
 ### Frontend
 
-1. Accédez au répertoire `frontend` : `cd frontend`
-2. Accédez au répertoire `myapp` : `cd myapp`
-3. Installez les dépendances : `npm install`
+1. Accédez au répertoire `frontend` : `cd .\frontend\my-app\`
+2. Installez les dépendances : `npm install`
 4. Démarrez l'application React : `npm start`
 
 ## Utilisation - Documentation
