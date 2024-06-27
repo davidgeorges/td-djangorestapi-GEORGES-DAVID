@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { TextField, Button, Snackbar, SnackbarContent, IconButton } from '@mui/material';
 import { Close as CloseIcon } from '@mui/icons-material';
-import { getPublications, getPublication, updatePublication, createPublication } from '../service/api';
+import { getPublication, updatePublication, createPublication } from '../service/api';
 
 const PublicationForm = () => {
   const { id } = useParams();

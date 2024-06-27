@@ -16,7 +16,9 @@ const NavBar = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Research Project Tracker
+          <Button color="inherit" component={Link} to="/">
+            Research Project Tracker
+          </Button>
         </Typography>
         <Button color="inherit" onClick={handleGetToken}>
           GET TOKEN

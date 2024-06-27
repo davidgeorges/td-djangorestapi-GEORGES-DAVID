@@ -9,12 +9,14 @@ import ResearcherList from './components/ResearcherList';
 import ResearcherForm from './components/ResearcherForm';
 import AdvancedSearch from './components/AdvancedSearch';
 import './App.css';
+import IndexPage from './pages/IndexPage';
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
+          <Route path="/" element={<IndexPage/>} />
           <Route path="/projets" element={<ResearchProjectList />} />
           <Route path="/projets/ajouter" element={<ResearchProjectForm />} />
           <Route path="/projets/:id/modifier" element={<ResearchProjectForm />} />

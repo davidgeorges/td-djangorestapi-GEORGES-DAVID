@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Container } from '@mui/material';
+import { AppBar, Container } from '@mui/material';
 import NavBar from './NavBar';
 
 const Layout = ({ children }) => {
