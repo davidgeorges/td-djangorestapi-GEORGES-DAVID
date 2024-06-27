@@ -15,14 +15,15 @@ Cette application permet de gérer les informations sur les projets de recherche
    - Sur Windows : `env\Scripts\activate` ou `.\env\Scripts\activate.bat`
    - Sur MacOS/Linux : `source env/bin/activate`
 5. Installez les dépendances : `pip install -r requirements.txt`
-6. Appliquez les migrations : `python manage.py migrate`
-7. Démarrez le serveur de développement : `python manage.py runserver`
-8. Attention a bien modifier le .env avec vos informations de base de données, pour ce projet PostgreSQL est utilisé :
+6. MODIFIER le .env avec vos informations de base de données, pour ce projet PostgreSQL est utilisé :
    - DATABASE_NAME = "your_database_name"
    - DATABASE_USER = "your_database_user"
    - DATABASE_PASSWORD = "your_database_password"
    - DATABASE_HOST = "your_database_host"
    - DATABASE_PORT = "your_database_port"
+7. Appliquez les migrations : `python manage.py migrate`
+8. Démarrez le serveur de développement : `python manage.py runserver`
+
 
 ### Frontend
 
